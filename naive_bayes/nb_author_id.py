@@ -28,11 +28,23 @@ features_train, features_test, labels_train, labels_test = preprocess()
 # sets time to current time at the start of training
 t0 = time()
 #< your clf.fit() line of code >
-
+from sklearn.naive_bayes import GaussianNB
+gnb = GaussianNB()
+fitted = gnb.fit(features_train, labels_train)
 # estimates time of training:
 print "training time:", round(time()-t0, 3), "s"
 
+# sets time to current time at the start of fitting
+t0 = time()
+# fitting
+predicted = fitted.predict(features_test)
 
+# estimates time of prediction
+print "predicting time:", round(time()-t0, 3), "s"
+
+# number of mislabeled points:
+print("Number of mislabeled points out of a total %d points : %d"
+% (labels_test != predicted).sum())
 
 #########################################################
 
