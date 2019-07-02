@@ -42,7 +42,10 @@ print("predicting time", round(time()-t0, 3), "s")
 
 # number of mislabeled points:
 print("Number of mislabeled points out of a total %d points %d")
-print((labels_test != predicted).sum())
+mislabeledpoints = (labels_test != predicted).sum()
+print(mislabeledpoints)
+accuracy_of_model = (len(labels_test) - mislabeledpoints)/len(labels_test)
+print("Accuracy is:", accuracy_of_model)
 
 #########################################################
 
