@@ -25,7 +25,13 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 
 #########################################################
-### your code goes here ###
+# sets time to current time at the start of training
+t0 = time()
+#< your clf.fit() line of code >
+
+# estimates time of training:
+print "training time:", round(time()-t0, 3), "s"
+
 
 
 #########################################################
