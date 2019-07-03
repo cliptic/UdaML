@@ -25,9 +25,9 @@ print("preprocess done")
 
 # ADD FEATURES AS IN LESSON 3.30
 
-features_train = features_train[:int(len(features_train)/100)] 
+''' features_train = features_train[:int(len(features_train)/100)] 
 labels_train = labels_train[:int(len(labels_train)/100)] 
-print("using 1\% of training data")
+print("using 1\% of training data") '''
 
 # add loop for C
 
@@ -67,3 +67,4 @@ for i in Cset:
 
 	# answers for 10,26,50th elements
 	print(pred[10], pred[26], pred[50])
+	print("Emails classified as written by Chriss: ", pred.sum())
