@@ -28,7 +28,7 @@ t0 = time()
 
 from sklearn.svm import SVC
 print("SVC imported")
-clf = SVC(kernel="linear")
+clf = SVC(kernel="rbf")
 
 # ADD FEATURES AS IN LESSON 3.30
 
