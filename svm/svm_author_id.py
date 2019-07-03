@@ -19,16 +19,17 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
-
+print("preprocess done")
 #########################################################
 ### your code goes here ###
 
 # sets time to current time at the start of training
 t0 = time()
 from sklearn.svm import SVC
+print("SVC imported")
 clf = SVC(kernel="linear")
 clf.fit(features_train, labels_train) 
-
+print("SVC fitted")
 # estimates time of training:
 print("training time", round(time()-t0, 3), "s")
 
@@ -43,7 +44,7 @@ print("predicting time", round(time()-t0, 3), "s")
 
 #########################################################
 print("Number of mislabeled points out of a total %d points %d")
-mislabeledpoints = (labels_test != predicted).sum()
+mislabeledpoints = (labels_test != pred).sum()
 print(mislabeledpoints)
 
 from sklearn.metrics import accuracy_score
