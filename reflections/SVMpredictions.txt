@@ -37,8 +37,7 @@ no. of Chris training emails 7936
 no. of Sara training emails 7884
 preprocess done
 SVC imported
-C:\Users\Karolina\AppData\Local\Programs\Python\Python37-32\lib\site-packages\sklearn\svm\base.py:193: FutureWarning: The default value of gamma will change from 'auto' to 'scale' in version 0.22 to account better for unscaled features. Set gamma explicitly to 'auto' or 'scale' to avoid this warning.
-  "avoid this warning.", FutureWarning)
+
 SVC fitted
 training time 0.152 s
 [0 1 1 ... 1 1 1]
@@ -48,3 +47,17 @@ Number of mislabeled points out of a total %d points %d
 0.6160409556313993
 Accuracy is: 0.6160409556313993
 [Finished in 5.6s]
+
+/////////////////
+BRF, C=10000, 100% training data
+
+no. of Chris training emails 7936
+no. of Sara training emails 7884
+SVC fitted with C value of  10000
+training time 119.592 s
+predicting time 12.177 s
+Number of mislabeled points
+16
+Accuracy with C value of  10000  is: 0.9908987485779295
+Emails classified as written by Chriss:  877
+[Finished in 137.4s]
