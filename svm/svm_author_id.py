@@ -23,42 +23,44 @@ print("preprocess done")
 #########################################################
 ### your code goes here ###
 
-# sets time to current time at the start of training
-t0 = time()
-
-from sklearn.svm import SVC
-print("SVC imported")
-clf = SVC(kernel="rbf")
-
 # ADD FEATURES AS IN LESSON 3.30
 
 features_train = features_train[:int(len(features_train)/100)] 
 labels_train = labels_train[:int(len(labels_train)/100)] 
+print("using 1\% of training data")
 
-clf.fit(features_train, labels_train) 
-print("SVC fitted")
+# add loop for gammas
 
-# estimates time of training:
-print("training time", round(time()-t0, 3), "s")
+from sklearn.svm import SVC
+print("SVC imported")
+n=0
+Cset = [10, 100, 1000, 10000]
+for i in Cset:
+	C_value = Cset[n]
+	n += 1
+	clf = SVC(kernel="rbf", C = C_value)
+	# sets time to current time at the start of training
+	t0 = time()
+	clf.fit(features_train, labels_train) 
+	print("SVC fitted with C value of ", C_value)
 
-# sets time to current time at the start of fitting
-t0 = time()
+	# estimates time of training:
+	print("training time", round(time()-t0, 3), "s")
 
-pred = clf.predict(features_test)
-print(pred)
+	# sets time to current time at the start of fitting
+	t0 = time()
 
-# estimates time of prediction
-print("predicting time", round(time()-t0, 3), "s")
+	pred = clf.predict(features_test)
+	print(pred)
 
-#########################################################
-print("Number of mislabeled points out of a total %d points %d")
-mislabeledpoints = (labels_test != pred).sum()
-print(mislabeledpoints)
+	# estimates time of prediction
+	print("predicting time", round(time()-t0, 3), "s")
 
-from sklearn.metrics import accuracy_score
-acc = accuracy_score(pred, labels_test)
-print(acc)
+	#########################################################
+	print("Number of mislabeled points")
+	mislabeledpoints = (labels_test != pred).sum()
+	print(mislabeledpoints)
 
-
-accuracy_of_model = (len(labels_test) - mislabeledpoints)/len(labels_test)
-print("Accuracy is:", accuracy_of_model)
+	from sklearn.metrics import accuracy_score
+	acc = accuracy_score(pred, labels_test)
+	print("Accuracy with C value of ", C_value, " is:", acc)
