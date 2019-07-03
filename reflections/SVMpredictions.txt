@@ -1,0 +1,13 @@
+no. of Chris training emails 7936
+no. of Sara training emails 7884
+preprocess done
+SVC imported
+SVC fitted
+training time 173.452 s
+[0 0 1 ... 1 0 0]
+predicting time 17.069 s
+Number of mislabeled points out of a total %d points %d
+28
+0.9840728100113766
+Accuracy is: 0.9840728100113766
+[Finished in 195.3s]
