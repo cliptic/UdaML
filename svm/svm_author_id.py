@@ -29,7 +29,7 @@ features_train = features_train[:int(len(features_train)/100)]
 labels_train = labels_train[:int(len(labels_train)/100)] 
 print("using 1\% of training data")
 
-# add loop for gammas
+# add loop for C
 
 from sklearn.svm import SVC
 print("SVC imported")
