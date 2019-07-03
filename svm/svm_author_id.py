@@ -25,11 +25,19 @@ print("preprocess done")
 
 # sets time to current time at the start of training
 t0 = time()
+
 from sklearn.svm import SVC
 print("SVC imported")
 clf = SVC(kernel="linear")
+
+# ADD FEATURES AS IN LESSON 3.30
+
+features_train = features_train[:int(len(features_train)/100)] 
+labels_train = labels_train[:int(len(labels_train)/100)] 
+
 clf.fit(features_train, labels_train) 
 print("SVC fitted")
+
 # estimates time of training:
 print("training time", round(time()-t0, 3), "s")
 
