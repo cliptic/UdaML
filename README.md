@@ -8,12 +8,18 @@ Adjustments include:
 - Setting print() as command instead of a keyword by rewriting the code in different files
 - Changing cPickle and pickle packaging for Python 3
 
-==============
+---------------------------
+
 Supervised learning
-- Naive Bayes
+- Naive Bayes: 
 	Setting a classifier that sets apart letters by authors. 
-- SVM
+- Support Vector Machine SVC classifier: 
 	Using SVM SVC scassifier with different C, gamma values, kernels.
+- Decision Tree Classifier:
+	-- Setting decision tree classifier and playing with features (min_samples_split, number of features, etc. )
+	-- Understanding the concept and calculations of entropy
+	-- BIAS vs VARIANCE
+
 
 --------------------------
 
