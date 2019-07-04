@@ -26,12 +26,12 @@ print("preprocess done")
 
 # ADD FEATURES AS IN LESSON 3.30
 
-''' features_train = features_train[:int(len(features_train)/100)] 
+'''
+features_train = features_train[:int(len(features_train)/100)] 
 labels_train = labels_train[:int(len(labels_train)/100)] 
 print("using 1\% of training data") '''
 
-# add loop for C
-''' 
+
 from sklearn.tree import DecisionTreeClassifier
 print("DTC imported")
 clf = DecisionTreeClassifier(min_samples_split = 40)
@@ -59,4 +59,4 @@ print(mislabeledpoints)
 
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
-print("Accuracy is ", acc) '''
+print("Accuracy is ", acc) 
