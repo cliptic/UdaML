@@ -34,7 +34,7 @@ print("using 1\% of training data") '''
 
 from sklearn.tree import DecisionTreeClassifier
 print("DTC imported")
-clf = DecisionTreeClassifier()
+clf = DecisionTreeClassifier(min_samples_split = 40)
 # sets time to current time at the start of training
 t0 = time()
 clf.fit(features_train, labels_train) 
