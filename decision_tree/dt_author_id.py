@@ -18,7 +18,7 @@ from email_preprocess import preprocess
 ### and testing datasets, respectively
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
-
+print("number of features in the data set: ", len(features_train[0]))
 
 print("preprocess done")
 #########################################################
@@ -31,7 +31,7 @@ labels_train = labels_train[:int(len(labels_train)/100)]
 print("using 1\% of training data") '''
 
 # add loop for C
-
+''' 
 from sklearn.tree import DecisionTreeClassifier
 print("DTC imported")
 clf = DecisionTreeClassifier(min_samples_split = 40)
@@ -59,4 +59,4 @@ print(mislabeledpoints)
 
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
-print("Accuracy is ", acc)
+print("Accuracy is ", acc) '''
