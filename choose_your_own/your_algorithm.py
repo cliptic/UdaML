@@ -35,9 +35,9 @@ from sklearn.ensemble import AdaBoostClassifier
 from time import time
 clf = AdaBoostClassifier()
 
-# code to use 1% of training data
-features_train = features_train[:int(len(features_train)/100)] 
-labels_train = labels_train[:int(len(labels_train)/100)] 
+# code to use 10% of training data
+features_train = features_train[:int(len(features_train)/10)] 
+labels_train = labels_train[:int(len(labels_train)/10)] 
 print("using 1\% of training data") 
 
 t0 = time()
