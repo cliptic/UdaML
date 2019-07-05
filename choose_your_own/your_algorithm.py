@@ -38,7 +38,7 @@ clf = AdaBoostClassifier()
 # code to use 10% of training data
 features_train = features_train[:int(len(features_train)/10)] 
 labels_train = labels_train[:int(len(labels_train)/10)] 
-print("using 1\% of training data") 
+print("using 10\% of training data") 
 
 t0 = time()
 clf = clf.fit(features_train, labels_train)
