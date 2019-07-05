@@ -31,14 +31,29 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
+from sklearn.ensemble import AdaBoostClassifier
+from time import time
+clf = AdaBoostClassifier()
 
+# code to use 1% of training data
+features_train = features_train[:int(len(features_train)/100)] 
+labels_train = labels_train[:int(len(labels_train)/100)] 
+print("using 1\% of training data") 
 
+t0 = time()
+clf = clf.fit(features_train, labels_train)
+print("training time", round(time()-t0, 3), "s")
 
+t0 = time()
+pred = clf.predict(features_test)
+print("Prediction time", round(time()-t0, 3), "s")
 
-
-
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(pred, labels_test)
+print("accuracy of random forest model: ", acc)
 
 try:
     prettyPicture(clf, features_test, labels_test)
 except NameError:
     pass
+    print("Printing was not initiated")
