@@ -19,6 +19,10 @@ Supervised learning
 	-- Setting decision tree classifier and playing with features (min_samples_split, number of features, etc. )
 	-- Understanding the concept and calculations of entropy
 	-- BIAS vs VARIANCE
+- K nearest negihbour
+- Random forest
+- Adaboots
+
 
 
 --------------------------
