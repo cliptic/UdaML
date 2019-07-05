@@ -35,10 +35,10 @@ from sklearn.ensemble import AdaBoostClassifier
 from time import time
 clf = AdaBoostClassifier()
 
-# code to use 10% of training data
+'''# code to use 10% of training data
 features_train = features_train[:int(len(features_train)/10)] 
 labels_train = labels_train[:int(len(labels_train)/10)] 
-print("using 10\% of training data") 
+print("using 10\% of training data") '''
 
 t0 = time()
 clf = clf.fit(features_train, labels_train)
@@ -50,10 +50,32 @@ print("Prediction time", round(time()-t0, 3), "s")
 
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
-print("accuracy of random forest model: ", acc)
+print("accuracy of AdaBoost model: ", acc)
 
 try:
     prettyPicture(clf, features_test, labels_test)
 except NameError:
     pass
     print("Printing was not initiated")
+
+
+from sklearn.ensemble import RandomForestClassifier
+from time import time
+clf = RandomForestClassifier()
+
+'''# code to use 10% of training data
+features_train = features_train[:int(len(features_train)/10)] 
+labels_train = labels_train[:int(len(labels_train)/10)] 
+print("using 10\% of training data") '''
+
+t0 = time()
+clf = clf.fit(features_train, labels_train)
+print("training time", round(time()-t0, 3), "s")
+
+t0 = time()
+pred = clf.predict(features_test)
+print("Prediction time", round(time()-t0, 3), "s")
+
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(pred, labels_test)
+print("accuracy of Random Forest model: ", acc)
