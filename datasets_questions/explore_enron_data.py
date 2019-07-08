@@ -50,3 +50,6 @@ print("Value of stocks belonging to James Prentice:",
 
 print("Number of messages from Wesley Colwell to POIs:", 
 	enron_data['COLWELL WESLEY']['from_this_person_to_poi'])
+
+print("The value of stock options exercised by Jeffrey K Skilling:", 
+	enron_data['SKILLING JEFFREY K']['exercised_stock_options'])
