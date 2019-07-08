@@ -63,3 +63,15 @@ print("LAY KENNETH L:",
 print("FASTOW ANDREW S:", 
 	enron_data['FASTOW ANDREW S']['total_payments'])
 
+# No. of people with listed salaries
+n=0
+for key in my_list_people:
+	if enron_data[key]["salary"] != 'NaN' :
+		n += 1
+print("Number of people with salaries listed:",n)
+
+n=0
+for key in my_list_people:
+	if enron_data[key]["email_address"] != 'NaN' :
+		n += 1
+print("Number of people with known email addresses:",n)
