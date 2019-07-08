@@ -87,6 +87,9 @@ for key in my_list_people:
 print("Number of people with unknown total payment:", totalPaymentNaNs)
 print("Percentage of people with no information on total payments:", 
 	totalPaymentNaNs/len(my_list_people)*100, "%")
+# With +10 people as NAN for total_payments
+print("If the data set ould have 10 extra people with NaN as total_payments, the percentage for t_p as Nan would be:", 
+	(totalPaymentNaNs+10)/(len(enron_data)+10)*100, "%")
 
 # How many POIs in the E+F dataset have “NaN” 
 # for their total payments? 
@@ -99,3 +102,8 @@ for key in my_list_people:
 print("Number of POI people with unknown total payment:", totalPaymentPoiNaNs)
 print("Percentage of POI people with no information on total payments:", 
 	totalPaymentPoiNaNs/PoiPeople*100, "%")
+
+# With +10 POI people as NAN for total_payments
+print("If the data set would have 10 extra POI people with NaN as total_payments, the percentage for t_p as Nan would be:", 
+	(totalPaymentPoiNaNs+10)/(PoiPeople+10)*100, "%")
+
