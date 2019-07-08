@@ -45,4 +45,8 @@ for key in my_list_people:
 		n += 1
 print("There are", n, "people, listed as POIs")
 
-print("Value of stocks belonging to James Prentice:", enron_data['PRENTICE JAMES']['total_stock_value'])
+print("Value of stocks belonging to James Prentice:", 
+	enron_data['PRENTICE JAMES']['total_stock_value'])
+
+print("Number of messages from Wesley Colwell to POIs:", 
+	enron_data['COLWELL WESLEY']['from_this_person_to_poi'])
