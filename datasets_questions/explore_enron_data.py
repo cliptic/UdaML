@@ -39,11 +39,11 @@ for key,value in enron_data.items() :
     my_list_people.append(key)
 print(my_list_people)
 
-n=0
+PoiPeople=0
 for key in my_list_people:
 	if enron_data[key]["poi"] == 1 :
-		n += 1
-print("There are", n, "people, listed as POIs")
+		PoiPeople += 1
+print("There are", PoiPeople, "people, listed as POIs")
 
 print("Value of stocks belonging to James Prentice:", 
 	enron_data['PRENTICE JAMES']['total_stock_value'])
@@ -63,7 +63,7 @@ print("LAY KENNETH L:",
 print("FASTOW ANDREW S:", 
 	enron_data['FASTOW ANDREW S']['total_payments'])
 
-# No. of people with listed salaries
+# No. of people with listed salaries, emails
 n=0
 for key in my_list_people:
 	if enron_data[key]["salary"] != 'NaN' :
@@ -75,3 +75,27 @@ for key in my_list_people:
 	if enron_data[key]["email_address"] != 'NaN' :
 		n += 1
 print("Number of people with known email addresses:",n)
+
+# How many people in the E+F dataset 
+#(as it currently exists) have “NaN” for their total payments?
+# What percentage of people in the dataset as a whole is this?
+
+totalPaymentNaNs = 0
+for key in my_list_people:
+	if enron_data[key]["total_payments"] == 'NaN' :
+		totalPaymentNaNs += 1
+print("Number of people with unknown total payment:", totalPaymentNaNs)
+print("Percentage of people with no information on total payments:", 
+	totalPaymentNaNs/len(my_list_people)*100, "%")
+
+# How many POIs in the E+F dataset have “NaN” 
+# for their total payments? 
+# What percentage of POI’s as a whole is this?
+
+totalPaymentPoiNaNs = 0
+for key in my_list_people:
+	if enron_data[key]["poi"] == True and enron_data[key]["total_payments"] == 'NaN':
+		totalPaymentPoiNaNs += 1
+print("Number of POI people with unknown total payment:", totalPaymentPoiNaNs)
+print("Percentage of POI people with no information on total payments:", 
+	totalPaymentPoiNaNs/PoiPeople*100, "%")
