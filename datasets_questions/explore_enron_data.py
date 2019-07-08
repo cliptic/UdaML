@@ -27,8 +27,9 @@ print(type(enron_data))
 # Count number of features
 my_list = []
 for key,value in enron_data['METTS MARK'].items() :
-    my_list.append(value)
-# print(my_list)
+    my_list.append(key)
+print("Features for every person:")
+print(my_list)
 print("There are", len(my_list), "Features for every person")
 
 # How many POIs? (Persons of interest)
@@ -44,3 +45,4 @@ for key in my_list_people:
 		n += 1
 print("There are", n, "people, listed as POIs")
 
+print("Value of stocks belonging to James Prentice:", enron_data['PRENTICE JAMES']['total_stock_value'])
