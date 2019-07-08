@@ -37,7 +37,7 @@ print("There are", len(my_list), "Features for every person")
 my_list_people = []
 for key,value in enron_data.items() :
     my_list_people.append(key)
-# print(my_list_people)
+print(my_list_people)
 
 n=0
 for key in my_list_people:
@@ -53,3 +53,13 @@ print("Number of messages from Wesley Colwell to POIs:",
 
 print("The value of stock options exercised by Jeffrey K Skilling:", 
 	enron_data['SKILLING JEFFREY K']['exercised_stock_options'])
+
+# Who got the most money?
+print("How much money did they get?")
+print("SKILLING JEFFREY K:", 
+	enron_data['SKILLING JEFFREY K']['total_payments'])
+print("LAY KENNETH L:", 
+	enron_data['LAY KENNETH L']['total_payments'])
+print("FASTOW ANDREW S:", 
+	enron_data['FASTOW ANDREW S']['total_payments'])
+
