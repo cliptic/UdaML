@@ -17,7 +17,15 @@
 
 
 import pickle
+import pandas as pd 
 
 enron_data = pickle.load(open("../final_project/final_project_dataset_unix.pkl", "rb"))
 
+print(len(enron_data))
+print(type(enron_data))
 
+my_list = []
+for key,value in enron_data['METTS MARK'].items() :
+    my_list.append(value)
+# print(my_list)
+print("There are ", len(my_list), "Features for every person")
