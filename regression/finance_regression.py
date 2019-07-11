@@ -24,6 +24,7 @@ dictionary = pickle.load( open("../final_project/final_project_dataset_modified_
 features_list = ["bonus", "salary"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
+sort_keys = '../tools/python2_lesson06_keys.pkl'
 
 ### training-testing split needed in regression, just like classification
 from sklearn.model_selection import train_test_split
