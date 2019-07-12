@@ -24,7 +24,7 @@ dictionary = pickle.load( open("../final_project/final_project_dataset_modified_
 features_list = ["bonus", "salary"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
-sort_keys = '../tools/python2_lesson06_keys.pkl'
+sort_keys = '../tools/python2_lesson06_keys_unix.pkl'
 
 ### training-testing split needed in regression, just like classification
 from sklearn.model_selection import train_test_split
@@ -42,7 +42,6 @@ test_color = "r"
 from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 reg = reg.fit(feature_train, target_train)
-
 
 
 ### draw the scatterplot, with color-coded training and testing points
@@ -68,3 +67,6 @@ plt.xlabel(features_list[1])
 plt.ylabel(features_list[0])
 plt.legend()
 plt.show()
+
+print(reg.coef_)
+print(reg.intercept_)
