@@ -81,5 +81,8 @@ print(word_data[152])
 from sklearn.feature_extraction.text import TfidfVectorizer
 transformer = TfidfVectorizer(stop_words='english')
 transformed_text = transformer.fit_transform(word_data)
-print(transformer.get_feature_names())
+#print(transformer.get_feature_names())
 print(len(transformer.get_feature_names()))
+
+vec = transformer.get_feature_names()
+print(vec[34597])
