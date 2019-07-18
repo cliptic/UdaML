@@ -12,14 +12,22 @@ def outlierCleaner(predictions, ages, net_worths):
     """
     
     cleaned_data = []
-    squared_errors = []
-    n = 0
-    for i in predictions:
-        squared_errors.append((predictions[n] - net_worths[n])**2)
-        n += 1
 
-    m = 0
-    for i in predictions:
+
+    def Nmaxelements(list1, percent): 
+        indexes = []
+        N = int(len(list1)/100*percent)
+        for i in range(N):
+            max1 = 0  
+            for j in range(len(list1)):      
+                if list1[j] > max1: 
+                    max1 = list1[j]; 
+                    m = j
+            list1[m] = 0
+            indexes.append(m) 
+
+        return indexes
+    print(Nmaxelements(squared_errors, 10))
         
 
     ### your code goes here
