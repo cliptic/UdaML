@@ -40,36 +40,7 @@ except NameError:
 plt.scatter(ages, net_worths)
 plt.show()
 
-
-### identify and remove the most outlier-y points
-cleaned_data = []
-
-# Create an array of squared errors
-squared_errors = []
 predictions = reg.predict(ages_train)
-n = 0
-for i in predictions:
-    squared_errors.append((predictions[n] - net_worths[n])**2)
-    n += 1
-
-# Function returns a list of indexes 
-# for a percentage of largest elements of a list
-# return a list of indexes
-def Nmaxelements(list1, percent): 
-    indexes = []
-    N = int(len(list1)/100*percent)
-    for i in range(N):
-        max1 = 0  
-        for j in range(len(list1)):      
-            if list1[j] > max1: 
-                max1 = list1[j]; 
-                m = j
-        list1[m] = 0
-        indexes.append(m) 
-
-    return indexes
-indexlist = Nmaxelements(squared_errors, 10)
-print(indexlist)
 
 try:
     predictions = reg.predict(ages_train)
@@ -77,9 +48,6 @@ try:
 except NameError:
     print("your regression object doesn't exist, or isn't name reg")
     print("can't make predictions to use in identifying outliers")
-
-
-
 
 
 
@@ -93,6 +61,9 @@ if len(cleaned_data) > 0:
     try:
         reg.fit(ages, net_worths)
         plt.plot(ages, reg.predict(ages), color="blue")
+        print("score for the regression with 90 percent of training data points:", reg.score(ages_test, net_worths_test))
+        print("slope of the regression with 90 percent of training data is:", reg.coef_)
+
     except NameError:
         print("you don't seem to have regression imported/created,")
         print("   or else your regression object isn't named reg")
