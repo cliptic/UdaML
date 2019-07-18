@@ -48,11 +48,26 @@ acc = accuracy_score(labels_test, pred)
 print(acc)
 
 importances = clf.feature_importances_
-print(max(importances))
-print(importances)
+print("biggest importance", max(importances))
 
+#sort importances and indexes:
 import numpy as np
 indices = np.argsort(importances)[::-1]
 print(indices[0:10])
+print(importances[0:10])
 
-print(vectorizer.get_feature_names()[33614])
+sorted_importances = np.sort(importances)[::-1]
+print("sorted importances:", sorted_importances[0:20])
+#print index of the word with the highest importance:
+print(vectorizer.get_feature_names()[indices[0]])
+print(vectorizer.get_feature_names()[indices[1]])
+#create a list of indice with importances >0.2
+indexlist = []
+m=0
+for i in importances:
+	if importances[m] > 0.2:
+		indexlist.append(indices[m])
+	m+=1
+
+print(indexlist)
+

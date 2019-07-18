@@ -51,7 +51,8 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             email = parseOutText(email)
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
-            replacables = ["sara", "shackleton", "chris", "germani"]
+            #replacables = ["sara", "houect", "home", "fax", "77002", "street", "forward", "germany", "1400", "smith", "ect", "houston", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf", "houectect", "httpnewsinocompressindexcgirelease21099"]
+            replacables = ["sara", "chris", "shackleton", "germani", "sshacklensf", "cgermannsf"]
             m = 0
             for i in replacables:
                 email = email.replace(replacables[m], "")
@@ -85,4 +86,4 @@ transformed_text = transformer.fit_transform(word_data)
 print(len(transformer.get_feature_names()))
 
 vec = transformer.get_feature_names()
-print(vec[34597])
+#print(vec[34597])
