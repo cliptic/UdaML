@@ -53,4 +53,6 @@ print(importances)
 
 import numpy as np
 indices = np.argsort(importances)[::-1]
-print(indices)
+print(indices[0:10])
+
+print(vectorizer.get_feature_names()[33614])
