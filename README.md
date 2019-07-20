@@ -10,6 +10,15 @@ Adjustments include:
 
 ---------------------------
 
+DATA MANIPULATION
+	-- train-test splitting
+	-- randomising data selection
+	-- Outlier management: selection and removal
+	-- Feature scaling: Min/max scaling
+	-- Feature selections
+	-- PCA: principal component analysis
+	-- ICA: independent component analysis
+
 Supervised learning
 - Naive Bayes: 
 	Setting a classifier that sets apart letters by authors. 
@@ -26,12 +35,6 @@ Supervised learning
 	-- Score data
 	-- R_squared
 	-- Predictions
-Unsupervised clustering: 
-- K-Means clustering
-- Data management:
-	-- Outlier management: selection and removal
-	-- Feature scaling: Min/max scaling
-	-- Feature selections
 - Text learning:
 	-- Vectorizing
 	-- Text management
@@ -39,7 +42,10 @@ Unsupervised clustering:
 	-- Stemming
 	-- Weighing
 	-- NLTK
+Unsupervised learning: 
+- K-Means clustering
 
+Valuations metrics
 
 
 
