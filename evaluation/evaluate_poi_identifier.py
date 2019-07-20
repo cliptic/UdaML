@@ -16,6 +16,7 @@ import sys
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 from sklearn.metrics import confusion_matrix
+from sklearn import metrics
 
 data_dict = pickle.load(open("../final_project/final_project_dataset_unix.pkl", "rb") )
 
@@ -69,3 +70,14 @@ print("False positives:", falsepositives)
 print("False negatives:", falsenegatives)
 
 print(confusion_matrix(labels_test, pred))
+
+print("Precision score:", metrics.precision_score(pred, labels_test))
+print("Recall score:", metrics.recall_score(pred, labels_test))
+
+# made- up data questions
+A_predictions = [0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1]
+A_true_labels = [0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0]
+
+print(confusion_matrix(A_true_labels, A_predictions))
+print("Precision score:", metrics.precision_score(A_true_labels, A_predictions))
+print("Recall score:", metrics.recall_score(A_true_labels, A_predictions))
