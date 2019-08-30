@@ -2,39 +2,39 @@
 
 ---------------------------
 
-## DATA MANIPULATION
-	-- train-test splitting
-	-- randomising data selection
-	-- Outlier management: selection and removal
-	-- Feature scaling: Min/max scaling
-	-- Feature selections
-	-- PCA: principal component analysis
-	-- ICA: independent component analysis
+## Data manipulation
+- train-test splitting
+- randomising data selection
+- Outlier management: selection and removal
+- Feature scaling: Min/max scaling
+- Feature selections
+- PCA: principal component analysis
+- ICA: independent component analysis
 
-# Supervised learning
+## Supervised learning
 [Naive Bayes](https://github.com/cliptic/Machine_Learning_Projects/tree/master/naive_bayes): 
 - Setting a classifier that sets apart letters by authors. 
-## Support Vector Machine SVC classifier: 
+### Support Vector Machine SVC classifier: 
 - Using SVM SVC scassifier with different C, gamma values, kernels.
-## Decision Tree Classifier:
+### Decision Tree Classifier:
 - Setting decision tree classifier and playing with features (min_samples_split, number of features, etc. )
 - Understanding the concept and calculations of entropy
 - BIAS vs VARIANCE
-## K nearest neighbor
-## Random forest
-## Adaboots
-## Regressions
+### K nearest neighbor
+### Random forest
+### Adaboots
+### Regressions
 - Score data
 - R_squared
 - Predictions
-# Text learning:
+### Text learning:
 - Vectorizing
 - Text management
 - Classification (Bag of words)
 - Stemming
 - Weighing
 - NLTK
-# Unsupervised learning: 
+### Unsupervised learning: 
 - K-Means clustering
 
 #Valuations metrics
